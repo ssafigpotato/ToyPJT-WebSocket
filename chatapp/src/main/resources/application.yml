@@ -1,0 +1,20 @@
+#spring.application.name=chatapp
+spring:
+  application:
+    name: chatapp
+  datasource:
+    url: jdbc:mysql://localhost:3306/chatdb?serverTimezone=Asia/Seoul&characterEncoding=UTF-8 # MySQL 연결 주소 (chatdb는 사용할 DB 이름)
+    username: root # MySQL 접속 계쩡
+    password: your_password # MySQL 접속 비밀번호
+    driver-class-name: com.mysql.cj.jdbc.Driver # JDBC 드라이버 클래스
+  #  ✔️ 필요한 이유
+  #  Spring Boot가 MySQL과 연결하려면 어디(MySQL 주소) / 누구(username) / 비밀번호 정보를 알아야 함
+  #  이 설정이 없으면 DB 연결이 불가능
+  jpa:
+    hibernate:
+      ddl-auto: update # JPA가 자동으로 테이블을 생성 및 업데이트하는 설정 (기존 테이블이 있으면 유지, 새로운 컬럼만 추가)
+    show-sql: true # JPA가 실행하는 SQL을 콘솔에서 확인할 수 있게 함
+  #  ✔️ 필요한 이유
+  #
+  #  JPA 사용 시 테이블 자동 생성/수정 가능
+  #  SQL이 정상적으로 실행되는지 확인 가능
