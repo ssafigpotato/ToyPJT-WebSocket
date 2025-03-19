@@ -15,7 +15,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // 모든 경로에 대해 CORS 허용
-                        .allowedOrigins("*") // 프론트엔드 주소 넣으면 됨 ("http://127.0.0.1:5500")이런거
+                        .allowedOrigins("http://127.0.0.1:5500") // 프론트엔드 주소 넣으면 됨 ("http://127.0.0.1:5500")이런거
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") //  허용할 HTTP 메서드
                         .allowedHeaders("*")
                         .allowCredentials(true); // 인증정보 포함 여부
