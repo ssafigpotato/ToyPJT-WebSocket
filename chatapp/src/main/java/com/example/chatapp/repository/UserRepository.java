@@ -17,6 +17,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * */
 
     User findByUsername(String username);
+
+    boolean existsByUsername(String username);
     /**
      * Spring Data JPA가 자동으로 SQL을 생성
      * 아래 SQL과 동일한 쿼리 실행:
