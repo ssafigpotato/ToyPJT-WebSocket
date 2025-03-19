@@ -26,6 +26,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry){
+        /** enableSimpleBroker("/topic")이 부분이 브로커 역할을 대신하고 있음
+         * -> 스프링이 자체적으로 메시지를 전달하는 역할 해줌
+         * springboot의 기본제공 기능인 simple broker를 사용중
+         * 즉, rabbitMQ 같은 외부 메시지 브로커 없이도 기본적인 Pub-Sub(발행-구독)기능 사용 가능
+         */
         registry.enableSimpleBroker("/topic"); // 클라이언트가 구독할 주소(브로커가 메시지 전달할 경로 설정)
         registry.setApplicationDestinationPrefixes("/app"); // 클라이언트가 메시지를 보낼 주소
     }
