@@ -38,8 +38,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry){
         registry.addEndpoint("/ws") // 클라이언트가 WebSocket에 연결할 엔드포인트 설정
-                .setAllowedOrigins("*"); // CORS 허용
-//                .withSockJS(); // WebSocket 미지원 환경에서는 SockJS사용
+                .setAllowedOrigins("*") // CORS 허용
+                .withSockJS(); // WebSocket 미지원 환경에서는 SockJS사용
                 // SockJS를 사용하면 WebSocket이 지원되지 않는 환경에서도 Ajax를 이용한 폴링 방식으로 연결할 수 있음
     }
 }
